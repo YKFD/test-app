@@ -1,2 +1,4 @@
-<li><h1>{{@category.name}}</h1></li>
+<li class="header-list-element">
+  <LinkTo class="header-list-value" @route={{this.categoryUrl}}>{{@category.name}}</LinkTo>
+</li>
 {{yield}}

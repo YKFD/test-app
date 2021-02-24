@@ -1,0 +1,12 @@
+.app-header-block {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 30px 200px;
+  border-bottom: #111111 1px solid;
+  background: #ffa500;
+  top: 0;
+  left: 0;
+  right: 0;
+}
