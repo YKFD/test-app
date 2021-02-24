@@ -40,19 +40,14 @@ export class CategoryService implements ICategoryService, OnModuleInit {
     return dto;
   }
 
-  async getById(id: string): Promise<CategoryDto> {
-    const dto: Category = await this.dbl.categoryRepository.findOne(id);
-    if (!dto) {
-      return null;
-    }
-
-    const childrenCategories: ChildrenCategory[] = await this.dbl.childrenCategoryRepository.find(
-      {
-        where: { categoryId: id },
-      },
-    );
-
-    return { ...dto, children: childrenCategories };
+  async getByCategory(category: string): Promise<CategoryDto> {
+    const entity: Category = await this.dbl.categoryRepository.findOne({
+      where: { name: category },
+    });
+    const childrenEntity = await this.dbl.childrenCategoryRepository.find({
+      where: { categoryId: entity.id },
+    });
+    return { ...entity, children: childrenEntity };
   }
 
   async save(categoryDto: CategoryDto): Promise<Category> {

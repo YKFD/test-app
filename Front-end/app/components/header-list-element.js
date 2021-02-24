@@ -7,6 +7,5 @@ export default class AppHeader extends Component {
   constructor(owner, args) {
     super(owner, args);
     this.categoryUrl = args.category.name.toLowerCase();
-    console.log(args.category.name.toLowerCase())
   }
 }
