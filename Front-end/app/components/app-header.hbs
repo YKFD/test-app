@@ -1,0 +1,6 @@
+<ul>
+  {{#each this.categories as |category|}}
+    <HeaderListElement @category={{category}}/>
+  {{/each}}
+</ul>
+{{yield}}
