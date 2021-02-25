@@ -1,7 +1,7 @@
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 import Cookies from 'js-cookie';
-import { getRequest } from '../helpers';
+import { getRequest } from '../shared';
 
 export default class AppHeader extends Component {
   @tracked categories;

@@ -1,5 +1,5 @@
 import Route from '@ember/routing/route';
-import { getRequest } from '../../../helpers';
+import { getRequest } from '../../../shared';
 
 export default class ForumCategoryPostRoute extends Route {
   async model(value) {

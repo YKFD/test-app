@@ -1,6 +1,6 @@
 import Controller from '@ember/controller';
-import { tracked } from '@glimmer/tracking';
-import { getRequest } from '../helpers';
+import {tracked} from '@glimmer/tracking';
+import {getRequest} from '../shared';
 import classic from 'ember-classic-decorator';
 
 @classic
@@ -13,10 +13,9 @@ export default class Application extends Controller {
     const newsResponse = await getRequest('app/news');
     const forumResponse = await getRequest('app/forums');
     this.posts = [
-      { title: 'Blogs',url: 'blogs/category/post', data: blogResponse.data },
-      { title: 'News', url: 'news/category/post', data: newsResponse.data },
-      { title: 'Forum', url: 'forum/category/post', data: forumResponse.data },
+      {title: 'Blogs', url: 'blogs/category/post', data: blogResponse.data},
+      {title: 'News', url: 'news/category/post', data: newsResponse.data},
+      {title: 'Forum', url: 'forum/category/post', data: forumResponse.data},
     ];
-    console.log(this.posts);
   }
 }
