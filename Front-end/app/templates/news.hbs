@@ -1,9 +1,4 @@
 {{page-title "News"}}
-<ul>
-  {{#each @model as |value|}}
-    <li>
-      <LinkTo @route="news/category" @model={{value.url}}>{{value.name}}</LinkTo>
-    </li>
-  {{/each}}
-</ul>
+<CategoryButton @values={{@model.values}}/>
+<PostButton @data={{@model.data}}/>
 {{outlet}}

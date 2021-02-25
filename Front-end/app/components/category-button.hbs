@@ -1,0 +1,8 @@
+<ul>
+  {{#each @values as |value|}}
+    <li>
+      <LinkTo @route="news/category" @model={{value.url}}>{{value.name}}</LinkTo>
+    </li>
+  {{/each}}
+</ul>
+{{yield}}
