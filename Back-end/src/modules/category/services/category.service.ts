@@ -11,10 +11,14 @@ export class CategoryService implements ICategoryService, OnModuleInit {
   private readonly parser: IParser;
 
   onModuleInit() {
-    const dtos: CategoryDto[] = this.parser.getObject(
-      `${this.parser.defaultPath}/categories.json`,
-    );
-    dtos.forEach((dto) => this.save(dto));
+    try {
+      const dtos: CategoryDto[] = this.parser.getObject(
+          `${this.parser.defaultPath}/categories.json`,
+      );
+      dtos.forEach((dto) => this.save(dto));
+    }catch (exc){
+      console.log(exc.message)
+    }
   }
 
   async getAll(): Promise<CategoryDto[]> {
