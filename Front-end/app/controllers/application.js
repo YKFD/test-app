@@ -13,9 +13,9 @@ export default class Application extends Controller {
     const newsResponse = await getRequest('app/news');
     const forumResponse = await getRequest('app/forums');
     this.posts = [
-      { url: 'blogs/category/post', data: blogResponse.data },
-      { url: 'news/category/post', data: newsResponse.data },
-      { url: 'forum/category/post', data: forumResponse.data },
+      { title: 'Blogs',url: 'blogs/category/post', data: blogResponse.data },
+      { title: 'News', url: 'news/category/post', data: newsResponse.data },
+      { title: 'Forum', url: 'forum/category/post', data: forumResponse.data },
     ];
     console.log(this.posts);
   }
