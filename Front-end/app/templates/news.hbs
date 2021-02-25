@@ -1,4 +1,4 @@
 {{page-title "News"}}
-<CategoryButton @values={{@model.values}}/>
-<PostButton @data={{@model.data}}/>
+<CategoryButton @url="news/category" @values={{@model.values}}/>
+<PostButton @url="news/category/post" @data={{@model.data}}/>
 {{outlet}}

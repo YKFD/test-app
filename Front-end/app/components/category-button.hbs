@@ -1,7 +1,7 @@
 <ul>
   {{#each @values as |value|}}
     <li>
-      <LinkTo @route="news/category" @model={{value.url}}>{{value.name}}</LinkTo>
+      <LinkTo @route={{@url}} @model={{value.url}}>{{value.name}}</LinkTo>
     </li>
   {{/each}}
 </ul>

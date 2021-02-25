@@ -12,6 +12,14 @@ Router.map(function () {
       this.route('news/category/post', {path: 'news/:category/:id'});
     });
   });
-  this.route('forum');
-  this.route('blogs');
+  this.route('forum',() => {
+    this.route('forum/category', {path: 'forum/:category'}, () =>  {
+      this.route('forum/category/post', {path: 'forum/:category/:id'},);
+    });
+  });
+  this.route('blogs', () =>  {
+    this.route('blogs/category', {path: 'blogs/:category'}, () =>  {
+      this.route('blogs/category/post', {path: 'blogs/:category/:id'});
+    });
+  });
 });

@@ -1,2 +1,4 @@
 {{page-title "Blogs"}}
+<CategoryButton @url="blogs/category" @values={{@model.values}}/>
+<PostButton @url="blogs/category/post" @data={{@model.data}}/>
 {{outlet}}
