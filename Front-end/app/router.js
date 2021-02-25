@@ -7,7 +7,9 @@ export default class Router extends EmberRouter {
 }
 
 Router.map(function () {
-  this.route('news');
+  this.route('news', () => {
+    this.route('news/category', {path: 'news/:id'});
+  })
   this.route('forum');
   this.route('blogs');
 });

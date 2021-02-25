@@ -1,5 +1,7 @@
 import Component from '@glimmer/component';
-import { tracked } from '@glimmer/tracking';
+import {tracked} from '@glimmer/tracking';
+import Cookies from 'js-cookie'
+import {getRequest} from "../helpers";
 
 export default class AppHeader extends Component {
   @tracked categories;
@@ -10,11 +12,10 @@ export default class AppHeader extends Component {
   }
 
   async getCategories() {
-    const response = await fetch('http://localhost:3000/app/categories');
+    const response = await getRequest('app/categories')
     if (response.status < 400) {
-      const json = await response.text();
-      const categories = await JSON.parse(json);
-      this.categories = categories;
+      this.categories = response.data;
+      Cookies.set('categories', JSON.stringify(response.data))
     }
   }
 }

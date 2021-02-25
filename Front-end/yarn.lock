@@ -4686,7 +4686,7 @@ ember-cli-babel@^6.0.0-beta.4:
     ember-cli-version-checker "^2.1.2"
     semver "^5.5.0"
 
-ember-cli-babel@^7.0.0, ember-cli-babel@^7.13.0, ember-cli-babel@^7.13.2, ember-cli-babel@^7.18.0, ember-cli-babel@^7.21.0, ember-cli-babel@^7.22.1, ember-cli-babel@^7.23.0, ember-cli-babel@^7.23.1, ember-cli-babel@^7.4.0, ember-cli-babel@^7.4.1, ember-cli-babel@^7.7.3:
+ember-cli-babel@^7.0.0, ember-cli-babel@^7.1.0, ember-cli-babel@^7.13.0, ember-cli-babel@^7.13.2, ember-cli-babel@^7.18.0, ember-cli-babel@^7.21.0, ember-cli-babel@^7.22.1, ember-cli-babel@^7.23.0, ember-cli-babel@^7.23.1, ember-cli-babel@^7.4.0, ember-cli-babel@^7.4.1, ember-cli-babel@^7.7.3:
   version "7.23.1"
   resolved "https://registry.yarnpkg.com/ember-cli-babel/-/ember-cli-babel-7.23.1.tgz#d1517228ede08a5d4b045c78a7429728e956b30b"
   integrity sha512-qYggmt3hRs6QJ6cRkww3ahMpyP8IEV2KFrIRO/Z6hu9MkE/8Y28Xd5NjQl6fPV3oLoG0vwuHzhNe3Jr7Wec8zw==
@@ -4909,7 +4909,7 @@ ember-cli-typescript@^4.0.0:
     stagehand "^1.0.0"
     walk-sync "^2.2.0"
 
-ember-cli-version-checker@^2.1.2:
+ember-cli-version-checker@^2.1.0, ember-cli-version-checker@^2.1.2:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/ember-cli-version-checker/-/ember-cli-version-checker-2.2.0.tgz#47771b731fe0962705e27c8199a9e3825709f3b3"
   integrity sha512-G+KtYIVlSOWGcNaTFHk76xR4GdzDLzAS4uxZUKdASuFX0KJE43C6DaqL+y3VTpUFLI2FIkAS6HZ4I1YBi+S3hg==
@@ -5049,6 +5049,14 @@ ember-compatibility-helpers@^1.1.1, ember-compatibility-helpers@^1.1.2, ember-co
     ember-cli-version-checker "^5.1.1"
     semver "^5.4.1"
 
+ember-cookies@^0.5.2:
+  version "0.5.2"
+  resolved "https://registry.yarnpkg.com/ember-cookies/-/ember-cookies-0.5.2.tgz#06e33463f2f83254fefaf224cc944dec3fb9d3ba"
+  integrity sha512-nZ7oG97kBcO9UHjO95ryABpnVx62Bhxo7lIsBJNmWvFXleILm9DGueiAynzXxuYWWPuKIeeSbYakrS1869tNTw==
+  dependencies:
+    ember-cli-babel "^7.1.0"
+    ember-getowner-polyfill "^1.1.0 || ^2.0.0"
+
 ember-data@~3.25.0:
   version "3.25.0"
   resolved "https://registry.yarnpkg.com/ember-data/-/ember-data-3.25.0.tgz#fe9bbff26563aa61dfc4430f61c16141e5d57d30"
@@ -5084,6 +5092,13 @@ ember-export-application-global@^2.0.1:
   resolved "https://registry.yarnpkg.com/ember-export-application-global/-/ember-export-application-global-2.0.1.tgz#b120a70e322ab208defc9e2daebe8d0dfc2dcd46"
   integrity sha512-B7wiurPgsxsSGzJuPFkpBWnaeuCu2PGpG2BjyrfA1VcL7//o+5RSnZqiCEY326y7qmxb2GoCgo0ft03KBU0rRw==
 
+ember-factory-for-polyfill@^1.3.1:
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/ember-factory-for-polyfill/-/ember-factory-for-polyfill-1.3.1.tgz#b446ed64916d293c847a4955240eb2c993b86eae"
+  integrity sha512-y3iG2iCzH96lZMTWQw6LWNLAfOmDC4pXKbZP6FxG8lt7GGaNFkZjwsf+Z5GAe7kxfD7UG4lVkF7x37K82rySGA==
+  dependencies:
+    ember-cli-version-checker "^2.1.0"
+
 ember-fetch@^8.0.4:
   version "8.0.4"
   resolved "https://registry.yarnpkg.com/ember-fetch/-/ember-fetch-8.0.4.tgz#b9a3239e9d188ada18a4448ccb4fea2a091e3952"
@@ -5102,6 +5117,14 @@ ember-fetch@^8.0.4:
     ember-cli-typescript "^3.1.3"
     node-fetch "^2.6.1"
     whatwg-fetch "^3.4.0"
+
+"ember-getowner-polyfill@^1.1.0 || ^2.0.0":
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/ember-getowner-polyfill/-/ember-getowner-polyfill-2.2.0.tgz#38e7dccbcac69d5ec694000329ec0b2be651d2b2"
+  integrity sha512-rwGMJgbGzxIAiWYjdpAh04Abvt0s3HuS/VjHzUFhVyVg2pzAuz45B9AzOxYXzkp88vFC7FPaiA4kE8NxNk4A4Q==
+  dependencies:
+    ember-cli-version-checker "^2.1.0"
+    ember-factory-for-polyfill "^1.3.1"
 
 ember-inflector@^4.0.1:
   version "4.0.1"
@@ -7305,6 +7328,11 @@ jquery@^3.5.0:
   version "3.5.1"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.5.1.tgz#d7b4d08e1bfdb86ad2f1a3d039ea17304717abb5"
   integrity sha512-XwIBPqcMn57FxfT+Go5pzySnm4KWkT1Tv7gjrpT1srtf8Weynl6R273VJ5GjkRb51IzMp5nbaPjJXMWeju2MKg==
+
+js-cookie@^2.2.1:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/js-cookie/-/js-cookie-2.2.1.tgz#69e106dc5d5806894562902aa5baec3744e9b2b8"
+  integrity sha512-HvdH2LzI/EAZcUwA8+0nKNtWHqS+ZmijLA30RwZA0bo7ToCckjK5MkGhjED9KoRcXO6BaGI3I9UIzSA1FKFPOQ==
 
 js-reporters@1.2.3:
   version "1.2.3"
