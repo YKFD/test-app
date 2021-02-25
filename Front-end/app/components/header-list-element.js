@@ -1,5 +1,5 @@
 import Component from '@glimmer/component';
-import {tracked} from '@glimmer/tracking';
+import { tracked } from '@glimmer/tracking';
 
 export default class AppHeader extends Component {
   @tracked categoryUrl;

@@ -1,4 +1,8 @@
 <AppHeader/>
 {{#if (compare target.currentPath "index")}}
+  {{page-title "Test-app"}}
+  {{#each posts as |post|}}
+    <PostButton @url={{post.url}} @data={{post.data}} />
+  {{/each}}
 {{/if}}
 {{outlet}}

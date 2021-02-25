@@ -67,6 +67,7 @@
     "edition": "octane"
   },
   "dependencies": {
+    "ember-classic-decorator": "^2.0.0",
     "ember-cookies": "^0.5.2",
     "js-cookie": "^2.2.1"
   }
