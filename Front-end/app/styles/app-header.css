@@ -1,11 +1,11 @@
 .app-header-block {
   position: fixed;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   margin: 0;
-  padding: 30px 200px;
-  border-bottom: #111111 1px solid;
-  background: #ffa500;
+  padding: 30px;
+  border-bottom: var(--font-color) 1px solid;
+  background: var(--header-background-color);
   top: 0;
   left: 0;
   right: 0;

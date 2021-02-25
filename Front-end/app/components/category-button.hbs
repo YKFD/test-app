@@ -1,7 +1,10 @@
-<ul>
+<ul class="category-buttons">
   {{#each @values as |value|}}
-    <li>
-      <LinkTo @route={{@url}} @model={{value.url}}>{{value.name}}</LinkTo>
+    <li class="category-button">
+
+      <LinkTo class="category-button-link" @route={{@url}} @model={{value.url}}>
+        <div class="category-button-text-block">{{value.name}}</div>
+      </LinkTo>
     </li>
   {{/each}}
 </ul>
