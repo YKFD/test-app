@@ -7,6 +7,7 @@ export default class NewsRoute extends Route {
   async model() {
     const values = [];
     const response = await getRequest('app/news')
+    const sortedData = [...response.data].sort((a, b) => b.id - a.id)
     const categories = JSON.parse(Cookies.get('categories'))
     const children = categories.find(category => category.name.toLowerCase() === 'news').children
 
@@ -19,7 +20,7 @@ export default class NewsRoute extends Route {
         )
       }
     );
-    return response.status < 400 ? {values, data: response.data} : {values}
+    return response.status < 400 ? {values, data: sortedData} : {values}
   };
 
 }

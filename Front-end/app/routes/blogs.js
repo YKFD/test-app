@@ -6,6 +6,7 @@ export default class BlogsRoute extends Route {
   async model() {
     const values = [];
     const response = await getRequest('app/blogs')
+    const sortedData = [...response.data].sort((a, b) => b.id - a.id)
     const categories = JSON.parse(Cookies.get('categories'))
     const children = categories.find(category => category.name.toLowerCase() === 'blogs').children
 
@@ -18,6 +19,6 @@ export default class BlogsRoute extends Route {
         )
       }
     );
-    return response.status < 400 ? {values, data: response.data} : {values}
+    return response.status < 400 ? {values, data: sortedData} : {values}
   };
 }
