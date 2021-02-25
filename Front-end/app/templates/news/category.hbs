@@ -1,0 +1,12 @@
+{{page-title "Category"}}
+<h1>Hello</h1>
+<ul>
+  {{#each @model as |data|}}
+    <li>
+<!--      <LinkTo>-->
+        <h1>{{data.title}}</h1>
+<!--      </LinkTo>-->
+    </li>
+  {{/each}}
+</ul>
+{{outlet}}

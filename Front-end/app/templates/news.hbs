@@ -2,7 +2,7 @@
 <ul>
   {{#each @model as |value|}}
     <li>
-      <LinkTo @route="news/category" @models={{array value.url}}>{{value.name}}</LinkTo>
+      <LinkTo @route="news/category" @model={{value.url}}>{{value.name}}</LinkTo>
     </li>
   {{/each}}
 </ul>
