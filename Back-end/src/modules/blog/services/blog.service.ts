@@ -18,11 +18,11 @@ export class BlogServise implements IBlogService, OnModuleInit {
   onModuleInit() {
     try {
       const dtos: BlogDto[] = this.parser.getObject(
-          `${this.parser.defaultPath}/blogs.json`,
+        `${this.parser.defaultPath}/blogs.json`,
       );
       dtos.forEach((dto) => this.save(dto));
-    }catch (exc){
-      console.log(exc.message)
+    } catch (exc) {
+      console.log(exc.message);
     }
   }
 

@@ -13,11 +13,11 @@ export class CategoryService implements ICategoryService, OnModuleInit {
   onModuleInit() {
     try {
       const dtos: CategoryDto[] = this.parser.getObject(
-          `${this.parser.defaultPath}/categories.json`,
+        `${this.parser.defaultPath}/categories.json`,
       );
       dtos.forEach((dto) => this.save(dto));
-    }catch (exc){
-      console.log(exc.message)
+    } catch (exc) {
+      console.log(exc.message);
     }
   }
 
