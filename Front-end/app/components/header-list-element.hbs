@@ -1,4 +1,8 @@
 <li class="header-list-element">
-  <LinkTo class="header-list-value" @route={{this.categoryUrl}}>{{this.name}}</LinkTo>
+  {{#if (compare this.name "Home")}}
+    <LinkTo class="header-list-value" @route={{this.categoryUrl}}>{{this.name}}</LinkTo>
+  {{else}}
+    <LinkTo class="header-list-value" @route="type" @model={{this.categoryUrl}}>{{this.name}}</LinkTo>
+  {{/if}}
 </li>
 {{yield}}

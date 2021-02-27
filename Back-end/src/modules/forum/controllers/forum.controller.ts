@@ -10,7 +10,7 @@ import {
 } from '@nestjs/common';
 import { ForumDto, FORUM_SERVICE, IForumService } from 'src/core';
 
-@Controller('app/forums')
+@Controller('app/forum')
 export class ForumController {
   @Inject(FORUM_SERVICE)
   private readonly forumService: IForumService;

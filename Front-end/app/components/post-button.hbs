@@ -1,7 +1,7 @@
 <ul class="post-buttons">
   {{#each @data as |data|}}
     <li class="post-button-element">
-      <LinkTo class="post-button" @route={{@url}} @models={{array data.category data.id}}>
+      <LinkTo class="post-button" @route={{@url}} @models={{array @type data.category data.id}}>
         <div class="post-button-info">
           <h3 class="post-button-title">{{data.title}}</h3>
           <h5 class="post-button-category">{{data.category}}</h5>

@@ -11,11 +11,11 @@ export default class Application extends Controller {
     super.init();
     const blogResponse = await getRequest('app/blogs');
     const newsResponse = await getRequest('app/news');
-    const forumResponse = await getRequest('app/forums');
+    const forumResponse = await getRequest('app/forum');
     this.posts = [
-      {title: 'Blogs', url: 'blogs/category/post', data: blogResponse.data},
-      {title: 'News', url: 'news/category/post', data: newsResponse.data},
-      {title: 'Forum', url: 'forum/category/post', data: forumResponse.data},
+      {title: 'Blogs', data: blogResponse.data},
+      {title: 'News', data: newsResponse.data},
+      {title: 'Forum', data: forumResponse.data},
     ];
   }
 }

@@ -1,5 +1,6 @@
 import Cookies from "js-cookie";
 import ENV from 'front-end/config/environment';
+import {COOKIES_CATEGORY} from "./constants";
 
 export const getRequest = async (url) => {
   const response = await fetch(`${ENV.apiURL}${url}`);
@@ -12,20 +13,30 @@ export const getRequest = async (url) => {
   }
 };
 
-export const getValues = async (url, type) => {
-  const values = [];
-  const response = await getRequest(url);
-  const sortedData = [...response.data].sort((a, b) => b.id - a.id);
-  const categories = JSON.parse(Cookies.get('categories'));
+const getCategoryChildren = (type) => {
+  const categories = JSON.parse(Cookies.get(COOKIES_CATEGORY));
+
   const children = categories.find(
     (category) => category.name.toLowerCase() === type
   ).children;
 
-  children.forEach((child) => {
-    values.push({
+  return children.map((child) => {
+    return {
       url: child.name.toLowerCase(),
       name: child.name,
-    });
+    };
   });
-  return response.status < 400 ? {values, data: sortedData} : {values};
+}
+
+export const getValues = async (url, type) => {
+  const {status, data} = await getRequest(url);
+  const values = getCategoryChildren(type)
+  if (status < 400) {
+    return {values, data, type}
+  } else {
+    return {
+      values,
+      type
+    }
+  }
 }
