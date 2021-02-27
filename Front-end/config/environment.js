@@ -5,7 +5,7 @@ module.exports = function (environment) {
     modulePrefix: 'front-end',
     environment,
     rootURL: '/',
-    apiURL: '/',
+    apiURL: 'http://localhost:3000/',
     locationType: 'auto',
     EmberENV: {
       FEATURES: {

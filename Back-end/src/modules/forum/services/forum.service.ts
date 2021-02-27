@@ -27,15 +27,21 @@ export class ForumService implements IForumService, OnModuleInit {
   }
 
   getAll(): Promise<ForumDto[]> {
-    return this.dbl.forumRepository.find();
+    return this.dbl.forumRepository.find({ order: { id: 'DESC' } });
   }
 
   getByCategory(category: string): Promise<ForumDto[]> {
-    return this.dbl.forumRepository.find({ where: { category } });
+    return this.dbl.forumRepository.find({
+      where: { category },
+      order: { id: 'DESC' },
+    });
   }
 
   getByCategoryAndId(category: string, id: string): Promise<ForumDto> {
-    return this.dbl.forumRepository.findOne({ where: { id, category } });
+    return this.dbl.forumRepository.findOne({
+      where: { id, category },
+      order: { id: 'DESC' },
+    });
   }
 
   save(forumDto: ForumDto): Promise<Forum> {

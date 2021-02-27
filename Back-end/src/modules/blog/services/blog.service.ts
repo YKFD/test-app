@@ -27,14 +27,20 @@ export class BlogServise implements IBlogService, OnModuleInit {
   }
 
   getAll(): Promise<BlogDto[]> {
-    return this.dbl.blogRepository.find();
+    return this.dbl.blogRepository.find({ order: { id: 'DESC' } });
   }
 
   getByCategory(category: string): Promise<BlogDto[]> {
-    return this.dbl.blogRepository.find({ where: { category } });
+    return this.dbl.blogRepository.find({
+      where: { category },
+      order: { id: 'DESC' },
+    });
   }
   getByCategoryAndId(category: string, id: string): Promise<BlogDto> {
-    return this.dbl.blogRepository.findOne({ where: { category, id } });
+    return this.dbl.blogRepository.findOne({
+      where: { category, id },
+      order: { id: 'DESC' },
+    });
   }
 
   save(blogDto: BlogDto): Promise<Blog> {

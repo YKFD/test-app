@@ -27,15 +27,21 @@ export class NewsService implements INewsService, OnModuleInit {
   }
 
   getAll(): Promise<NewsDto[]> {
-    return this.dbl.newsRepository.find();
+    return this.dbl.newsRepository.find({ order: { id: 'DESC' } });
   }
 
   getByCategory(category: string): Promise<NewsDto[]> {
-    return this.dbl.newsRepository.find({ where: { category } });
+    return this.dbl.newsRepository.find({
+      where: { category },
+      order: { id: 'DESC' },
+    });
   }
 
   getByCategoryAndId(category: string, id: string): Promise<NewsDto> {
-    return this.dbl.newsRepository.findOne({ where: { category, id } });
+    return this.dbl.newsRepository.findOne({
+      where: { category, id },
+      order: { id: 'DESC' },
+    });
   }
 
   save(newsDto: NewsDto): Promise<News> {
