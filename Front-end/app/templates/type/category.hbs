@@ -1,4 +1,4 @@
-{{page-title "Category"}}
+{{page-title (first-letter-capitalize @model.name)}}
 <div style="margin-top: 120px;">
   <PostButton @url="type/category/post" @data={{@model.data}} @type={{@model.type}} />
 </div>
