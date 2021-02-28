@@ -1,8 +1,8 @@
 import Controller from '@ember/controller';
-import {tracked} from '@glimmer/tracking';
+import { tracked } from '@glimmer/tracking';
 import classic from 'ember-classic-decorator';
 //Local
-import {getData} from '../shared';
+import { getData } from '../shared';
 
 @classic
 export default class Application extends Controller {
@@ -14,9 +14,9 @@ export default class Application extends Controller {
     const newsResponse = await getData('app/news');
     const forumResponse = await getData('app/forum');
     this.posts = [
-      {title: 'Blogs', data: blogResponse.data},
-      {title: 'News', data: newsResponse.data},
-      {title: 'Forum', data: forumResponse.data},
+      { title: 'Blogs', data: blogResponse.data },
+      { title: 'News', data: newsResponse.data },
+      { title: 'Forum', data: forumResponse.data },
     ];
   }
 }

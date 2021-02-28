@@ -5,10 +5,8 @@ export const getData = async (url) => {
   if (response.status < 400) {
     const json = await response.text();
     const data = await JSON.parse(json);
-    return {status: response.status, data};
+    return { status: response.status, data };
   } else {
     return response;
   }
 };
-
-

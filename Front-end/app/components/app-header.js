@@ -2,8 +2,8 @@ import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 import Cookies from 'js-cookie';
 //Local
-import {getData} from '../shared';
-import {COOKIES_CATEGORY} from '../constants'
+import { getData } from '../shared';
+import { COOKIES_CATEGORY } from '../constants';
 
 export default class AppHeader extends Component {
   @tracked categories;
